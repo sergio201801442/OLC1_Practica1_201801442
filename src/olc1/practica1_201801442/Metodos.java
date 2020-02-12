@@ -18,7 +18,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class Metodos {
     public String abrirARchivo(){
         try{
-            JFileChooser jfc = new JFileChooser();
+            JFileChooser jfc = new JFileChooser("C:\\Users\\Sergio\\Desktop");
             jfc.setAcceptAllFileFilterUsed(false);
             jfc.setFileFilter(new FileNameExtensionFilter("Archivos *.er", "er"));
             jfc.showOpenDialog(null);

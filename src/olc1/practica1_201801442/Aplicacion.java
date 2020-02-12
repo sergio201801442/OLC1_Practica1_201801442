@@ -5,7 +5,7 @@
  */
 package olc1.practica1_201801442;
 
-import javax.swing.JOptionPane;
+import java.util.LinkedList;
 
 /**
  *
@@ -109,9 +109,14 @@ public class Aplicacion extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
-            analisis.analizarLexico(jTextArea1.getText()+"\n");
+        try{
+            analisis.obtenerToken(jTextArea1.getText()+"\n");
             analisis.mostrarTokens();
+            analisis.lectura_Token();
+        }catch(Exception e){
+            System.out.println(e);
+        }        
+            
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

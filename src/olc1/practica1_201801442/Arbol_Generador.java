@@ -22,8 +22,8 @@ public class Arbol_Generador {
     
     Nodo_Arbol metodoPreorden(){
         
-        String valor = "";
-        if(valor=="."){
+        String valor = Lexico.salida.get(contador).getValor();
+        if(valor.equals(".")){
             Nodo_Arbol retorno = new Nodo_Arbol();    
             retorno.setValor(valor);
             contador++;
@@ -31,13 +31,13 @@ public class Arbol_Generador {
             retorno.setDerecha(metodoPreorden());
             return retorno;
         }
-        if(valor!="."){
+        if(Lexico.salida.get(contador).getTipo_Token()==Token.Tipo.ID){
             Nodo_Arbol retorno = new Nodo_Arbol();
-            //retorno.setValor(listavalor(contador));
+            retorno.setValor( Lexico.salida.get(contador).getValor());
             contador++;
             return retorno;
         }
-        return null; //que pedal
+        return null;
     }
     
 }

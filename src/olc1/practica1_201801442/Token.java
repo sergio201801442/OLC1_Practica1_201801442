@@ -12,21 +12,28 @@ package olc1.practica1_201801442;
 public class Token {
     
     public enum Tipo{
-        COMENTARIO_UNA_LINEA, 
-        COMENTARIO_INICIO_FIN, 
-        LLAVE_IZQ, 
-        LLAVE_DER, 
-        ID, 
-        ENTERO,
-        FLECHA, 
+        COMENTARIO_UNA_LINEA, //YA
+        COMENTARIO_INICIO_FIN,  //YA
+        LLAVE_IZQ, //YA
+        LLAVE_DER, //YA
+        ID, //YA
+        ENTERO, //YA
+        FLECHA, //TA
         // EXPRESION_REGULAR,
         // EXPRESIONES REGULARES?
-        PUNTO_Y_COMA,
-        PORCENTAJE,
-        CADENA,
-        DOS_PUNTOS,
-        RESERVADA_CONJ,
-        VAL_CONJUNTO,
+        PUNTO_Y_COMA, //TA
+        PORCENTAJE, 
+        CADENA, //YA
+        DOS_PUNTOS, //YA
+        RESERVADA_CONJ, //TA
+        CONCATENAR, //ya
+        DISYUNCION, //ya
+        INTERRO, //ya
+        KLEENE, //ya
+        MAS_OBLIGATORIO, //ya
+        INTERVALO_VIRGUILILLA, //ya
+        COMA, //ya
+        SIMBOLO,
         DESCONOCIDO
     }
     
@@ -100,10 +107,10 @@ public class Token {
                 return "Dos Puntos";
             case RESERVADA_CONJ:
                 return "Reservada Conjunto";
-            case VAL_CONJUNTO:
-                return "Valor Conjunto";
             case DESCONOCIDO:
                 return "Desconocido";
+            case SIMBOLO:
+                return "Valor Conjunto";
             default:
                 return "Desconocido";
         }
