@@ -14,7 +14,8 @@ public class Nodo_Arbol {
     private Nodo_Arbol izquierda;
     private Nodo_Arbol derecha;
     private String valor;
-
+    private boolean esConjunto;
+    
     public Nodo_Arbol(Nodo_Arbol izquierda, Nodo_Arbol derecha, String valor) {
         this.izquierda = izquierda;
         this.derecha = derecha;
@@ -47,6 +48,38 @@ public class Nodo_Arbol {
     public void setValor(String valor) {
         this.valor = valor;
     }
+
+    public void setEsConjunto(boolean esConjunto) {
+        this.esConjunto = esConjunto;
+    }
+    
+    public String getCodigoNodo(){
+        String codigo ="";
+        if(this.izquierda==null && this.derecha==null){
+            if(getValor().contains("\"")){
+                codigo += this.hashCode()+" [label="+getValor()+"];\n";
+            }else{
+                codigo += this.hashCode()+" [label="+"\""+getValor()+"\"];\n";
+            }
+        }
+        else{
+            if(getValor().contains("\"")){
+                codigo += this.hashCode()+"[label="+getValor()+"];\n";
+                //codigo += this.hashCode()+"[label=\"<C0>|"+getValor()+"|<C1>\"];\n";
+            }
+            else{
+                codigo += this.hashCode()+"[label="+"\""+getValor()+"\"];\n";
+            }   
+        }
+        if(this.izquierda!=null){
+            codigo += this.izquierda.getCodigoNodo()+this.hashCode()+":C0->"+izquierda.hashCode()+"\n";
+        }
+        if(this.derecha!=null){
+            codigo += this.derecha.getCodigoNodo()+this.hashCode()+":C1->"+derecha.hashCode()+"\n";
+        }
+        return codigo;
+    }
+    
     
     
 }

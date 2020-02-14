@@ -19,8 +19,6 @@ public class Token {
         ID, //YA
         ENTERO, //YA
         FLECHA, //TA
-        // EXPRESION_REGULAR,
-        // EXPRESIONES REGULARES?
         PUNTO_Y_COMA, //TA
         PORCENTAJE, 
         CADENA, //YA

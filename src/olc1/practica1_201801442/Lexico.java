@@ -17,6 +17,7 @@ public class Lexico {
     
     public static LinkedList<Token> salida = new LinkedList<Token>();
     public static LinkedList<Conjunto> conjuntos = new LinkedList<Conjunto>();
+    public static LinkedList<Expresion_Regular> expresiones = new LinkedList<Expresion_Regular>();
     
     private int estado;
     private String lexema;
@@ -819,22 +820,57 @@ public class Lexico {
     
     //si uso este
     public void lectura_Token(){
+        boolean esPorcentaje = false;
         for (int i = 0; i < salida.size(); i++) {
-            if(salida.get(i).getTipo_Token()==Token.Tipo.RESERVADA_CONJ){
-                if(salida.get(i+2).getTipo_Token()== Token.Tipo.ID){
-                    Conjunto auxiliar = new Conjunto(salida.get(i+2).getValor());
-                    System.out.println(salida.get(i+2).getValor());
-                    if(salida.get(i+4).getTipo_Token()== Token.Tipo.SIMBOLO){
-                        System.out.println(salida.get(i+4).getValor());
-                        auxiliar.setValor(salida.get(i+4).getValor());
-                        auxiliar.llenarLista();
-                        conjuntos.add(auxiliar);
+            if(esPorcentaje==false){
+                
+                if(salida.get(i).getTipo_Token()==Token.Tipo.RESERVADA_CONJ){
+                    if(salida.get(i+2).getTipo_Token()== Token.Tipo.ID){
+                        Conjunto auxiliar = new Conjunto(salida.get(i+2).getValor());
+                        //System.out.println(salida.get(i+2).getValor());
+                            if(salida.get(i+4).getTipo_Token()== Token.Tipo.SIMBOLO){
+                                //System.out.println(salida.get(i+4).getValor());
+                                auxiliar.setValor(salida.get(i+4).getValor());
+                                auxiliar.llenarLista();
+                                conjuntos.add(auxiliar);
+                                i=i+4;
+                            }
                     }
                 }
+                else if(salida.get(i).getTipo_Token()==Token.Tipo.ID){
+                    Expresion_Regular exp = new Expresion_Regular(salida.get(i).getValor());
+                    //System.out.println(exp.getNombre());
+                    if(salida.get(i+1).getTipo_Token()==Token.Tipo.FLECHA){
+                        
+                        for (int j = i+1; j < salida.size(); j++) {
+                            if(salida.get(j).getTipo_Token()==Token.Tipo.PUNTO_Y_COMA){
+                                i=j;
+                                break;
+                            }
+                            else{
+                                if(salida.get(j).getTipo_Token()!=Token.Tipo.FLECHA){
+                                    //System.out.println(salida.get(j).getValor());
+                                    // deberia agregar a lista de tokens
+                                    exp.getListaTokens().addLast(salida.get(j));
+                                }
+                            }
+                        }
+                        expresiones.addLast(exp);
+                    }
+                }
+                else if(salida.get(i).getTipo_Token()==Token.Tipo.PORCENTAJE){
+                    esPorcentaje = true;
+                }
             }
+            else{
+                
+            }
+            
         }
-        System.out.println(conjuntos.size());
+        //System.out.println(conjuntos.size());
         this.mostrarConjuntos();
+        this.mostrarExpresiones();
+        this.implementarArbol();
     }
     
     
@@ -848,5 +884,28 @@ public class Lexico {
             datos += "\n";
         }
         JOptionPane.showMessageDialog(null, datos);
+    }
+    public void mostrarExpresiones(){
+        String datos = "";
+        for (Expresion_Regular exp : expresiones) {
+            datos += exp.getNombre() + " -> ";
+            for (Token t : exp.getListaTokens()) {
+                datos += t.getValor();
+            }
+            datos +="\n";
+        }
+        JOptionPane.showMessageDialog(null, datos);
+    }
+    
+    public void implementarArbol(){
+        for (Expresion_Regular exp : expresiones) {
+            exp.getArbol().setTokens(exp.getListaTokens());
+        }
+        for (Expresion_Regular exp : expresiones) {
+            exp.getArbol().raiz = exp.getArbol().metodoPreorden();
+        }
+        for (Expresion_Regular exp : expresiones) {
+            exp.getArbol().graficarArbol();
+        }
     }
 }
