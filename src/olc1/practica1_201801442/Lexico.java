@@ -890,7 +890,7 @@ public class Lexico {
         for (Expresion_Regular exp : expresiones) {
             datos += exp.getNombre() + " -> ";
             for (Token t : exp.getListaTokens()) {
-                datos += t.getValor();
+                datos += t.getTipoString();
             }
             datos +="\n";
         }
@@ -906,6 +906,9 @@ public class Lexico {
         }
         for (Expresion_Regular exp : expresiones) {
             exp.getArbol().graficarArbol();
+        }
+        for (Expresion_Regular exp : expresiones) {
+            exp.getArbol().ejecutar_Numeracion();
         }
     }
 }

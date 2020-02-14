@@ -109,6 +109,8 @@ public class Token {
                 return "Desconocido";
             case SIMBOLO:
                 return "Valor Conjunto";
+            case COMA:
+                return "Coma";
             default:
                 return "Desconocido";
         }

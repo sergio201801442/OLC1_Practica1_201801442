@@ -14,7 +14,10 @@ public class Nodo_Arbol {
     private Nodo_Arbol izquierda;
     private Nodo_Arbol derecha;
     private String valor;
+    private Token value;
     private boolean esConjunto;
+    private int numero_Hoja;
+    private boolean anulable;
     
     public Nodo_Arbol(Nodo_Arbol izquierda, Nodo_Arbol derecha, String valor) {
         this.izquierda = izquierda;
@@ -22,7 +25,26 @@ public class Nodo_Arbol {
         this.valor = valor;
     }
 
+    public void setValue(Token value) {
+        this.value = value;
+    }
+
+    public int getNumero_Hoja() {
+        return numero_Hoja;
+    }
+
+    public void setNumero_Hoja(int numero_Hoja) {
+        this.numero_Hoja = numero_Hoja;
+    }
+
+    
+    public Token getValue() {
+        return value;
+    }
+
+    
     public Nodo_Arbol() {
+        int numero_Hoja=-1;
     }
 
     public Nodo_Arbol getIzquierda() {
@@ -79,6 +101,8 @@ public class Nodo_Arbol {
         }
         return codigo;
     }
+    
+    
     
     
     
