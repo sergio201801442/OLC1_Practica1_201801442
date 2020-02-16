@@ -111,6 +111,16 @@ public class Token {
                 return "Valor Conjunto";
             case COMA:
                 return "Coma";
+            case CONCATENAR:
+                return "Concatenar";
+            case DISYUNCION:
+                return "Alternacion";
+            case KLEENE:
+                return "Kleene";
+            case MAS_OBLIGATORIO:
+                return "mas obligatorio";
+            case INTERRO:
+                return "Interrogacion";
             default:
                 return "Desconocido";
         }

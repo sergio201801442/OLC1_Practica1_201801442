@@ -871,6 +871,7 @@ public class Lexico {
         this.mostrarConjuntos();
         this.mostrarExpresiones();
         this.implementarArbol();
+        
     }
     
     
@@ -883,7 +884,7 @@ public class Lexico {
             }
             datos += "\n";
         }
-        JOptionPane.showMessageDialog(null, datos);
+        //JOptionPane.showMessageDialog(null, datos);
     }
     public void mostrarExpresiones(){
         String datos = "";
@@ -904,11 +905,30 @@ public class Lexico {
         for (Expresion_Regular exp : expresiones) {
             exp.getArbol().raiz = exp.getArbol().metodoPreorden();
         }
-        for (Expresion_Regular exp : expresiones) {
-            exp.getArbol().graficarArbol();
-        }
+        
         for (Expresion_Regular exp : expresiones) {
             exp.getArbol().ejecutar_Numeracion();
+            Aplicacion.jComboBox1.addItem(exp.getNombre());
         }
+        
+        for (Expresion_Regular exp : expresiones) {
+            exp.getArbol().actualizar_Primeros_Ultimos();
+        }
+        for (Expresion_Regular exp : expresiones) {
+            exp.getArbol().show();
+        }
+        for (Expresion_Regular exp : expresiones) {
+            System.out.println("Cambio de Arbol");
+            exp.getArbol().next();
+        }
+        for (Expresion_Regular exp : expresiones) {
+            System.out.println("Cambio de Arbol");
+            exp.getArbol().muestra_Grafo();
+        }
+        for (Expresion_Regular exp : expresiones) {
+            exp.getArbol().graficarArbol();
+            exp.getArbol().graficar();
+        }
+        
     }
 }
