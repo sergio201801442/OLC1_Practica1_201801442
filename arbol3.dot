@@ -1,114 +1,114 @@
 digraph D {
 
-  node [shape=plaintext fontname="Sans serif" fontsize="8"];505223952 [ label=<
+  node [shape=plaintext fontname="Sans serif" fontsize="8"];319781834 [ label=<
    <table border="1" cellborder="0" cellspacing="1">
  <tr><td align="left"> <font color="red">1, </font></td></tr>
 <tr><td align="left"><b>F</b></td></tr>
 <tr><td align="left"> "."</td></tr>
      <tr><td align="left">0</td></tr>
  <tr><td align="left"> <font color="blue">6, </font></td></tr>
-   </table>>];682872895 [ label=<
+   </table>>];367930427 [ label=<
    <table border="1" cellborder="0" cellspacing="1">
  <tr><td align="left"> <font color="red">1, </font></td></tr>
 <tr><td align="left"><b>F</b></td></tr>
 <tr><td align="left"> "+"</td></tr>
      <tr><td align="left">0</td></tr>
  <tr><td align="left"> <font color="blue">1, </font></td></tr>
-   </table>>];1989764065 [ label=<
+   </table>>];2145269945 [ label=<
    <table border="1" cellborder="0" cellspacing="1">
  <tr><td align="left"> <font color="red">1, </font></td></tr>
 <tr><td align="left"><b>F</b></td></tr>
 <tr><td align="left"> "digito"</td></tr>
      <tr><td align="left">1</td></tr>
  <tr><td align="left"> <font color="blue">1, </font></td></tr>
-   </table>>];682872895->1989764065
-505223952->682872895
-1413058480 [ label=<
+   </table>>];367930427->2145269945
+319781834->367930427
+731276771 [ label=<
    <table border="1" cellborder="0" cellspacing="1">
  <tr><td align="left"> <font color="red">2, 3, 4, 5, </font></td></tr>
 <tr><td align="left"><b>F</b></td></tr>
 <tr><td align="left"> "+"</td></tr>
      <tr><td align="left">0</td></tr>
  <tr><td align="left"> <font color="blue">6, </font></td></tr>
-   </table>>];579521468 [ label=<
+   </table>>];1135577712 [ label=<
    <table border="1" cellborder="0" cellspacing="1">
  <tr><td align="left"> <font color="red">2, 3, 4, 5, </font></td></tr>
 <tr><td align="left"><b>F</b></td></tr>
 <tr><td align="left"> "."</td></tr>
      <tr><td align="left">0</td></tr>
  <tr><td align="left"> <font color="blue">6, </font></td></tr>
-   </table>>];344901114 [ label=<
+   </table>>];667220426 [ label=<
    <table border="1" cellborder="0" cellspacing="1">
  <tr><td align="left"> <font color="red">2, 3, 4, 5, </font></td></tr>
 <tr><td align="left"><b>F</b></td></tr>
 <tr><td align="left"> "|"</td></tr>
      <tr><td align="left">0</td></tr>
  <tr><td align="left"> <font color="blue">2, 3, 4, 5, </font></td></tr>
-   </table>>];699742945 [ label=<
+   </table>>];693175931 [ label=<
    <table border="1" cellborder="0" cellspacing="1">
  <tr><td align="left"> <font color="red">2, </font></td></tr>
 <tr><td align="left"><b>F</b></td></tr>
 <tr><td align="left"> "+"</td></tr>
      <tr><td align="left">2</td></tr>
  <tr><td align="left"> <font color="blue">2, </font></td></tr>
-   </table>>];344901114->699742945
-837383272 [ label=<
+   </table>>];667220426->693175931
+837863375 [ label=<
    <table border="1" cellborder="0" cellspacing="1">
  <tr><td align="left"> <font color="red">3, 4, 5, </font></td></tr>
 <tr><td align="left"><b>F</b></td></tr>
 <tr><td align="left"> "|"</td></tr>
      <tr><td align="left">0</td></tr>
  <tr><td align="left"> <font color="blue">3, 4, 5, </font></td></tr>
-   </table>>];1170902722 [ label=<
+   </table>>];238237579 [ label=<
    <table border="1" cellborder="0" cellspacing="1">
  <tr><td align="left"> <font color="red">3, </font></td></tr>
 <tr><td align="left"><b>F</b></td></tr>
 <tr><td align="left"> "-"</td></tr>
      <tr><td align="left">3</td></tr>
  <tr><td align="left"> <font color="blue">3, </font></td></tr>
-   </table>>];837383272->1170902722
-663298708 [ label=<
+   </table>>];837863375->238237579
+247043374 [ label=<
    <table border="1" cellborder="0" cellspacing="1">
  <tr><td align="left"> <font color="red">4, 5, </font></td></tr>
 <tr><td align="left"><b>F</b></td></tr>
 <tr><td align="left"> "|"</td></tr>
      <tr><td align="left">0</td></tr>
  <tr><td align="left"> <font color="blue">4, 5, </font></td></tr>
-   </table>>];661354166 [ label=<
+   </table>>];796538972 [ label=<
    <table border="1" cellborder="0" cellspacing="1">
  <tr><td align="left"> <font color="red">4, </font></td></tr>
 <tr><td align="left"><b>F</b></td></tr>
 <tr><td align="left"> "*"</td></tr>
      <tr><td align="left">4</td></tr>
  <tr><td align="left"> <font color="blue">4, </font></td></tr>
-   </table>>];663298708->661354166
-1566252039 [ label=<
+   </table>>];247043374->796538972
+402869443 [ label=<
    <table border="1" cellborder="0" cellspacing="1">
  <tr><td align="left"> <font color="red">5, </font></td></tr>
 <tr><td align="left"><b>F</b></td></tr>
 <tr><td align="left"> "/"</td></tr>
      <tr><td align="left">5</td></tr>
  <tr><td align="left"> <font color="blue">5, </font></td></tr>
-   </table>>];663298708->1566252039
-837383272->663298708
-344901114->837383272
-579521468->344901114
-1282811376 [ label=<
+   </table>>];247043374->402869443
+837863375->247043374
+667220426->837863375
+1135577712->667220426
+253476647 [ label=<
    <table border="1" cellborder="0" cellspacing="1">
  <tr><td align="left"> <font color="red">6, </font></td></tr>
 <tr><td align="left"><b>F</b></td></tr>
 <tr><td align="left"> "+"</td></tr>
      <tr><td align="left">0</td></tr>
  <tr><td align="left"> <font color="blue">6, </font></td></tr>
-   </table>>];579154792 [ label=<
+   </table>>];1296648975 [ label=<
    <table border="1" cellborder="0" cellspacing="1">
  <tr><td align="left"> <font color="red">6, </font></td></tr>
 <tr><td align="left"><b>F</b></td></tr>
 <tr><td align="left"> "digito"</td></tr>
      <tr><td align="left">6</td></tr>
  <tr><td align="left"> <font color="blue">6, </font></td></tr>
-   </table>>];1282811376->579154792
-579521468->1282811376
-1413058480->579521468
-505223952->1413058480
+   </table>>];253476647->1296648975
+1135577712->253476647
+731276771->1135577712
+319781834->731276771
  }

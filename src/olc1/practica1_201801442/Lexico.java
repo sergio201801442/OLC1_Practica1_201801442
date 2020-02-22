@@ -19,6 +19,7 @@ public class Lexico {
     public static LinkedList<Token> salida = new LinkedList<Token>();
     public static LinkedList<Conjunto> conjuntos = new LinkedList<Conjunto>();
     public static LinkedList<Expresion_Regular> expresiones = new LinkedList<Expresion_Regular>();
+    public static int numero4 = 0;
     public static int numero3=0;
     public static int numero =0;
     public static int numero1 =0;
@@ -828,17 +829,17 @@ public class Lexico {
         
         for (int i = 0; i <salida.size(); i++) {
             if(salida.get(i).getTipo_Token()==Token.Tipo.COMENTARIO_UNA_LINEA ){
-                JOptionPane.showMessageDialog(null, "Se ha removido "+salida.get(i).getValor());
+                //JOptionPane.showMessageDialog(null, "Se ha removido "+salida.get(i).getValor());
                 salida.remove(i);
             }
             else if(salida.get(i).getTipo_Token()==Token.Tipo.COMENTARIO_INICIO_FIN){
-                JOptionPane.showMessageDialog(null, "Se ha removido "+salida.get(i).getValor());
+                //JOptionPane.showMessageDialog(null, "Se ha removido "+salida.get(i).getValor());
                 salida.remove(i);
             }
         }
         for (int i = 0; i < salida.size(); i++) {
             if(salida.get(i).getTipo_Token()==Token.Tipo.COMENTARIO_UNA_LINEA || salida.get(i).getTipo_Token()==Token.Tipo.COMENTARIO_INICIO_FIN ){
-                JOptionPane.showMessageDialog(null, "Se removio despues");
+                //JOptionPane.showMessageDialog(null, "Se removio despues");
             }
         }
         boolean esPorcentaje = false;
@@ -899,12 +900,51 @@ public class Lexico {
         String datos = "";
         for(Conjunto t : conjuntos){
             datos += t.getNombre() + " -> ";
+            Aplicacion.jComboBox2.addItem(t.getNombre());
             for (String val : t.getValores()) {
                 datos += val +",";
             }
             datos += "\n";
         }
-        //JOptionPane.showMessageDialog(null, datos);
+        
+        
+        
+        String codigoGraphviz = "digraph H {\ntbl [\nshape=plaintext \nlabel=<\n";
+        codigoGraphviz += "<table border='0' cellborder='1' color='green' cellspacing='0'>\n";
+        codigoGraphviz += "<tr><td> Numero</td><td> Primeros </td></tr>";
+        
+        for(Conjunto t: conjuntos){
+            String aux = "";
+            for(String val : t.getValores()){
+                String valor = val;
+                if(valor.contains("<")){
+                    valor.replaceAll("<", "«");
+                }
+                if(valor.contains(">")){
+                    valor.replaceAll(">", "»");
+                }
+                aux +=valor+ ",";
+            }
+            codigoGraphviz += "<tr><td>"+t.getNombre()+"</td><td>"+aux+"</td></tr>\n";
+        }
+        
+        codigoGraphviz += "</table> \n>];\n}";
+        FileWriter fichero = null;
+        try{
+            fichero = new FileWriter("conj"+Lexico.numero4+".dot");
+            fichero.write(codigoGraphviz);
+            fichero.close();
+            
+            Runtime rt = Runtime.getRuntime();//C:\ProyectoJava
+            //rt.exec("dot -Tpng C:\\Users\\Sergio\\Documents\\NetBeansProjects\\EDD_DIC_2019_PY2_201801442\\recorrido"+numero+".dot -o recorrido"+numero+".png");
+            rt.exec("dot -Tpng conj"+Lexico.numero4+".dot -o conj"+Lexico.numero4+".png");
+            Lexico.numero4++;
+            //Formulario_Usuario.jLabel1.setIcon(new ImageIcon("C:\\Users\\Sergio\\Documents\\NetBeansProjects\\EDD_DIC_2019_PY2_201801442\\avl"+numero+".png"));
+            //Process p = Runtime.getRuntime().exec("cmd /c \""+"C:\\Users\\Sergio\\Documents\\NetBeansProjects\\EDD_DIC_2019_PY2_201801442\\avl"+numero+".png"+"\"");
+            //p.waitFor();
+        }catch(Exception e){
+            System.out.println(e);
+        }
     }
     public void mostrarExpresiones(){
         String datos = "";
@@ -915,7 +955,7 @@ public class Lexico {
             }
             datos +="\n";
         }
-        JOptionPane.showMessageDialog(null, datos);
+        //JOptionPane.showMessageDialog(null, datos);
     }
     
     public void implementarArbol(){

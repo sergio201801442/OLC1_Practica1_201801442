@@ -1,0 +1,13 @@
+digraph H {
+tbl [
+shape=plaintext 
+label=<
+<table border='0' cellborder='1' color='green' cellspacing='0'>
+<tr><td> Numero</td><td> Primeros </td></tr><tr><td>vocales</td><td>a,e,i,o,u,</td></tr>
+<tr><td>otrasLetras</td><td>m,r,c,l,g,s,</td></tr>
+<tr><td>abecedario</td><td>a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,</td></tr>
+<tr><td>conjnum</td><td>2,3,4,5,6,</td></tr>
+<tr><td>digito</td><td>0,1,2,3,4,5,6,7,8,9,</td></tr>
+</table> 
+>];
+}
