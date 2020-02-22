@@ -1,0 +1,10 @@
+digraph H {
+tbl [
+shape=plaintext 
+label=<
+<table border='0' cellborder='1' color='blue' cellspacing='0'>
+<tr><td> Estado</td><td> Val</td></tr><tr><td>S_0</td><td>1, </td></tr>
+<tr><td>S_1</td><td>1, 2, 3, 4, 5, </td></tr>
+</table> 
+>];
+}

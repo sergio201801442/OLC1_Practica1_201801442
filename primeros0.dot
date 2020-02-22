@@ -1,0 +1,18 @@
+digraph H {
+tbl [
+shape=plaintext 
+label=<
+<table border='0' cellborder='1' color='green' cellspacing='0'>
+<tr><td> Numero</td><td> Primeros </td></tr><tr><td>1</td><td>1</td></tr>
+<tr><td>0</td><td>1</td></tr>
+<tr><td>2</td><td>2</td></tr>
+<tr><td>3</td><td>3</td></tr>
+<tr><td>4</td><td>4</td></tr>
+<tr><td>0</td><td>4</td></tr>
+<tr><td>0</td><td>3</td></tr>
+<tr><td>0</td><td>3</td></tr>
+<tr><td>0</td><td>2</td></tr>
+<tr><td>0</td><td>1</td></tr>
+</table> 
+>];
+}

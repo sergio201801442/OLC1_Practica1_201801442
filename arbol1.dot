@@ -1,0 +1,26 @@
+digraph D {
+
+  node [shape=plaintext fontname="Sans serif" fontsize="8"];432612613 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+ <tr><td align="left"> <font color="red">1, </font></td></tr>
+<tr><td align="left"><b>F</b></td></tr>
+<tr><td align="left"> "."</td></tr>
+     <tr><td align="left">0</td></tr>
+ <tr><td align="left"> <font color="blue">2, </font></td></tr>
+   </table>>];1963177057 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+ <tr><td align="left"> <font color="red">1, </font></td></tr>
+<tr><td align="left"><b>F</b></td></tr>
+<tr><td align="left"> "comas4"</td></tr>
+     <tr><td align="left">1</td></tr>
+ <tr><td align="left"> <font color="blue">1, </font></td></tr>
+   </table>>];432612613->1963177057
+557022968 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+ <tr><td align="left"> <font color="red">2, </font></td></tr>
+<tr><td align="left"><b>F</b></td></tr>
+<tr><td align="left"> "Protoboard"</td></tr>
+     <tr><td align="left">2</td></tr>
+ <tr><td align="left"> <font color="blue">2, </font></td></tr>
+   </table>>];432612613->557022968
+ }

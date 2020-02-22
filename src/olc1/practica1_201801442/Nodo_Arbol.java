@@ -24,6 +24,7 @@ public class Nodo_Arbol {
     private LinkedList<Integer> ultimos = new LinkedList<Integer>();
     private LinkedList<Integer> siguientes = new LinkedList<Integer>();
     
+    
     public Nodo_Arbol(Nodo_Arbol izquierda, Nodo_Arbol derecha, String valor) {
         this.izquierda = izquierda;
         this.derecha = derecha;
@@ -113,22 +114,64 @@ public class Nodo_Arbol {
     }
  
     
+    public String getNodoTotal(){
+        String codigo ="";
+        codigo += this.hashCode()+" [ label=<\n" +
+        "   <table border=\"1\" cellborder=\"0\" cellspacing=\"1\">\n";
+        String primero ="";
+        for(Integer f : this.primeros){
+           primero += f +", ";
+        }
+        codigo += " <tr><td align=\"left\"> <font color=\"red\">"+primero+"</font></td></tr>\n" +
+        "<tr><td align=\"left\"><b>"+this.getAnulable()+"</b></td></tr>\n";
+        
+        
+        
+        if(this.getValor().contains("<")){
+            this.setValor(this.getValor().replaceAll("<", "«"));
+        }
+        else if(this.getValor().contains(">")){
+            this.setValor(this.getValor().replaceAll(">", "»"));
+        }
+        if(this.getValor().contains("\"")){
+            codigo += "<tr><td align=\"left\"> "+this.getValor()+"</td></tr>\n";
+        }
+        else{   
+            codigo += "<tr><td align=\"left\"> "+ "\""+this.getValor()+"\""+"</td></tr>\n";
+        }
+        
+        codigo +="     <tr><td align=\"left\">"+this.getNumero_Hoja()+"</td></tr>\n";
+        String ultimo ="";
+        for(Integer f : this.ultimos){
+           ultimo += f +", ";
+        }
+        codigo += " <tr><td align=\"left\"> <font color=\"blue\">"+ultimo+"</font></td></tr>\n";
+        codigo +="   </table>>];";
+        ultimo = "";
+        if(this.izquierda!=null){
+            codigo += this.izquierda.getNodoTotal()+this.hashCode()+"->"+izquierda.hashCode()+"\n";
+        }
+        if(this.derecha!=null){
+            codigo += this.derecha.getNodoTotal()+this.hashCode()+"->"+derecha.hashCode()+"\n";
+        }
+        return codigo;
+    }
     public String getCodigoNodo(){
         String codigo ="";
         if(this.izquierda==null && this.derecha==null){
             if(this.getValor().contains("\"")){
-            codigo += this.hashCode()+"[label="+this.getValor()+"+\"["+this.getNumero_Hoja()+","+this.getAnulable()+"]\"];\n";
+            codigo += this.hashCode()+"[label= "+this.anulable +"\n"+this.getValor()+"+\"["+this.getNumero_Hoja()+"]\"];\n";
             }
             else{
-            codigo += this.hashCode()+"[label="+"\""+this.getValor()+"["+this.getNumero_Hoja()+","+this.getAnulable()+"]\""+"];\n";
+            codigo += this.hashCode()+"[label="+this.anulable +"\n"+"\""+this.getValor()+"["+this.getNumero_Hoja()+"]\""+"];\n";
             }
         }
         else{
             if(this.getValor().contains("\"")){
-            codigo += this.hashCode()+"[label="+this.getValor()+","+this.getAnulable()+"];\n";
+            codigo += this.hashCode()+"[label="+this.anulable +"\n"+this.getValor()+"];\n";
             }
             else{
-            codigo += this.hashCode()+"[label="+"\""+this.getValor()+","+this.getAnulable()+"\""+"];\n";
+            codigo += this.hashCode()+"[label="+this.anulable +"\n"+"\""+this.getValor()+"\""+"];\n";
             }
         }
         if(this.izquierda!=null){

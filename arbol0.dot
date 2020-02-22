@@ -1,0 +1,82 @@
+digraph D {
+
+  node [shape=plaintext fontname="Sans serif" fontsize="8"];1526925548 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+ <tr><td align="left"> <font color="red">1, </font></td></tr>
+<tr><td align="left"><b>F</b></td></tr>
+<tr><td align="left"> "."</td></tr>
+     <tr><td align="left">0</td></tr>
+ <tr><td align="left"> <font color="blue">4, 2, </font></td></tr>
+   </table>>];616329364 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+ <tr><td align="left"> <font color="red">1, </font></td></tr>
+<tr><td align="left"><b>F</b></td></tr>
+<tr><td align="left"> "+"</td></tr>
+     <tr><td align="left">0</td></tr>
+ <tr><td align="left"> <font color="blue">1, </font></td></tr>
+   </table>>];574749201 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+ <tr><td align="left"> <font color="red">1, </font></td></tr>
+<tr><td align="left"><b>F</b></td></tr>
+<tr><td align="left"> "abecedario"</td></tr>
+     <tr><td align="left">1</td></tr>
+ <tr><td align="left"> <font color="blue">1, </font></td></tr>
+   </table>>];616329364->574749201
+1526925548->616329364
+8215914 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+ <tr><td align="left"> <font color="red">2, </font></td></tr>
+<tr><td align="left"><b>F</b></td></tr>
+<tr><td align="left"> "."</td></tr>
+     <tr><td align="left">0</td></tr>
+ <tr><td align="left"> <font color="blue">4, 2, </font></td></tr>
+   </table>>];1132093921 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+ <tr><td align="left"> <font color="red">2, </font></td></tr>
+<tr><td align="left"><b>F</b></td></tr>
+<tr><td align="left"> "conjnum"</td></tr>
+     <tr><td align="left">2</td></tr>
+ <tr><td align="left"> <font color="blue">2, </font></td></tr>
+   </table>>];8215914->1132093921
+75862474 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+ <tr><td align="left"> <font color="red">3, </font></td></tr>
+<tr><td align="left"><b>T</b></td></tr>
+<tr><td align="left"> "?"</td></tr>
+     <tr><td align="left">0</td></tr>
+ <tr><td align="left"> <font color="blue">4, </font></td></tr>
+   </table>>];691630649 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+ <tr><td align="left"> <font color="red">3, </font></td></tr>
+<tr><td align="left"><b>F</b></td></tr>
+<tr><td align="left"> "."</td></tr>
+     <tr><td align="left">0</td></tr>
+ <tr><td align="left"> <font color="blue">4, </font></td></tr>
+   </table>>];1137044601 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+ <tr><td align="left"> <font color="red">3, </font></td></tr>
+<tr><td align="left"><b>F</b></td></tr>
+<tr><td align="left"> ":"</td></tr>
+     <tr><td align="left">3</td></tr>
+ <tr><td align="left"> <font color="blue">3, </font></td></tr>
+   </table>>];691630649->1137044601
+1403058313 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+ <tr><td align="left"> <font color="red">4, </font></td></tr>
+<tr><td align="left"><b>F</b></td></tr>
+<tr><td align="left"> "+"</td></tr>
+     <tr><td align="left">0</td></tr>
+ <tr><td align="left"> <font color="blue">4, </font></td></tr>
+   </table>>];2072197366 [ label=<
+   <table border="1" cellborder="0" cellspacing="1">
+ <tr><td align="left"> <font color="red">4, </font></td></tr>
+<tr><td align="left"><b>F</b></td></tr>
+<tr><td align="left"> "abecedario"</td></tr>
+     <tr><td align="left">4</td></tr>
+ <tr><td align="left"> <font color="blue">4, </font></td></tr>
+   </table>>];1403058313->2072197366
+691630649->1403058313
+75862474->691630649
+8215914->75862474
+1526925548->8215914
+ }

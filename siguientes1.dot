@@ -1,0 +1,9 @@
+digraph H {
+tbl [
+shape=plaintext 
+label=<
+<table border='0' cellborder='1' color='green' cellspacing='0'>
+<tr><td> Numero</td><td> Siguientes</td></tr><tr><td>1</td><td>2,</td></tr>
+</table> 
+>];
+}

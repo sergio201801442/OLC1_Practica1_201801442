@@ -5,6 +5,7 @@
  */
 package olc1.practica1_201801442;
 
+import java.io.FileWriter;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
 
@@ -14,11 +15,14 @@ import javax.swing.JOptionPane;
  * @author Sergio
  */
 public class Lexico {
-    
+    public static LinkedList<Token> oficial = new LinkedList<Token>();
     public static LinkedList<Token> salida = new LinkedList<Token>();
     public static LinkedList<Conjunto> conjuntos = new LinkedList<Conjunto>();
     public static LinkedList<Expresion_Regular> expresiones = new LinkedList<Expresion_Regular>();
-    
+    public static int numero3=0;
+    public static int numero =0;
+    public static int numero1 =0;
+    public static int numero2 =0;;
     private int estado;
     private String lexema;
     private int linea = 1;
@@ -298,7 +302,7 @@ public class Lexico {
                     break;
                 case 15:
                     if(letra=='\n'){
-                        agregarToken(Token.Tipo.COMENTARIO_UNA_LINEA);
+                        agregarToken(Token.Tipo.COMENTARIO_INICIO_FIN);
                     }else{
                         lexema+=letra;
                     }
@@ -820,10 +824,26 @@ public class Lexico {
     
     //si uso este
     public void lectura_Token(){
+        oficial = salida;
+        
+        for (int i = 0; i <salida.size(); i++) {
+            if(salida.get(i).getTipo_Token()==Token.Tipo.COMENTARIO_UNA_LINEA ){
+                JOptionPane.showMessageDialog(null, "Se ha removido "+salida.get(i).getValor());
+                salida.remove(i);
+            }
+            else if(salida.get(i).getTipo_Token()==Token.Tipo.COMENTARIO_INICIO_FIN){
+                JOptionPane.showMessageDialog(null, "Se ha removido "+salida.get(i).getValor());
+                salida.remove(i);
+            }
+        }
+        for (int i = 0; i < salida.size(); i++) {
+            if(salida.get(i).getTipo_Token()==Token.Tipo.COMENTARIO_UNA_LINEA || salida.get(i).getTipo_Token()==Token.Tipo.COMENTARIO_INICIO_FIN ){
+                JOptionPane.showMessageDialog(null, "Se removio despues");
+            }
+        }
         boolean esPorcentaje = false;
         for (int i = 0; i < salida.size(); i++) {
             if(esPorcentaje==false){
-                
                 if(salida.get(i).getTipo_Token()==Token.Tipo.RESERVADA_CONJ){
                     if(salida.get(i+2).getTipo_Token()== Token.Tipo.ID){
                         Conjunto auxiliar = new Conjunto(salida.get(i+2).getValor());
@@ -871,7 +891,7 @@ public class Lexico {
         this.mostrarConjuntos();
         this.mostrarExpresiones();
         this.implementarArbol();
-        
+        this.mostrarTokens();
     }
     
     
@@ -926,9 +946,14 @@ public class Lexico {
             exp.getArbol().muestra_Grafo();
         }
         for (Expresion_Regular exp : expresiones) {
-            exp.getArbol().graficarArbol();
+            //exp.getArbol().graficarArbol();
+            //aca deberia agregar estados transicion
+            exp.getArbol().tabla();
+            exp.getArbol().graficarArbol2();
             exp.getArbol().graficar();
         }
         
+        
     }
+   
 }
