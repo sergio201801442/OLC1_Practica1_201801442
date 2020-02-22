@@ -638,8 +638,7 @@ public class Arbol_Generador {
                 System.out.println(datos);
             }
             state=0;
-        }
-        String codigoGraphviz = "digraph H {\ntbl [\nshape=plaintext \nlabel=<\n";
+            String codigoGraphviz = "digraph H {\ntbl [\nshape=plaintext \nlabel=<\n";
         codigoGraphviz += "<table border='0' cellborder='1' color='blue' cellspacing='0'>\n";
         codigoGraphviz += "<tr><td> Estado</td><td> Val</td></tr>";
         for(Estados e : estados_Transicion){
@@ -668,6 +667,8 @@ public class Arbol_Generador {
         }catch(Exception e){
             System.out.println(e);
         }
+        }
+        
     }
     
     private void Transiciones(Nodo_Arbol raiz){
